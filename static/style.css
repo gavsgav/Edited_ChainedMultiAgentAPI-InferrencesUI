@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    width: 100vw;
+    min-width: 800px;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #212121;
+    color: #fff;
+}
+ .contentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split the screen into two equal columns */
+    grid-template-rows: auto; /* Adjust row height automatically based on content */
+    height: 100vh; 
+}
+  /* Style for the header that spans across the top */
+.pageHeader {
+    grid-column: 1 / -1; /* Span from the first to the last column */
+    text-align: center;
+    margin-top: 20px;
+}
+#chat-container {
+    width: auto;
+    grid-column: 1; /* Place the chat container in the first column */
+    display: grid;
+    grid-template-columns: 1fr; /* Create one column */
+    grid-template-rows: 1fr 20px; /* Create two rows */
+    gap: 10px; /* Adjust the gap between items */
+    height: 80vh;
+    margin: 30px;
+}  
+/* Style for the chat window */
+#chat-window {
+    background-color: #373737;
+    grid-column: 1; /* Place the chat window in the first column */
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    height: 100%;
+}
+
+/* Style for the agent details container */
+#agent-container {
+    display: grid;
+    grid-column: 2; /* Place the agent details in the second column */
+    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+    grid-template-rows: repeat(2, 1fr); /* Create two equal rows */
+    gap: 10px; /* Adjust the gap between items */
+    height: 100%;
+    width: 287px;
+    height: 288px;
+    background: transparent;
+}
+
+/* Style for individual agent detail blocks */
+.agent-block {
+    width: 287px;
+    height: 288px;
+    background: transparent;
+
+/* Additional styling for individual blocks */
+}
+
+
+#input-container {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/*
+input[type="text"], button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.agent-input {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    #chat-container, #input-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+} */

@@ -4,76 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sequential Multi-Agent Chat</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        #chat-container {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            background-color: #fff;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 800px;
-            height: 500px;
-            overflow-y: auto;
-        }
-
-        #input-container {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        input[type="text"], button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-        }
-
-        button {
-            background: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-
-        .agent-input {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 600px) {
-            #chat-container, #input-container {
-                width: 95%;
-                margin: 20px auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div id="chat-container"></div>
-    <div id="input-container">
-        <input type="text" id="user-input" placeholder="Type your message here" class="agent-input" />
-        <input type="text" id="task-flow" placeholder="Enter task flow e.g. 1,2,3,4,5,6" class="agent-input" />
-        <div id="agents-container">
-            <!-- Dynamically created agent inputs will be here -->
+    <div class="contentContainer">
+        <header class="pageHeader">
+            <h1>Sequential Multi-Agent Chat</h1>
+        </header>
+        <section id="chat-container">
+            <div id="chat-window">
+                <!-- Chat messages will be here -->
+            </div>
             
+            <!-- User input -->
+            <input type="text" id="user-input" placeholder="Type your message here" />
+            <!-- Send button -->
+            <button onclick="startConversation()">Send</button>
+        </section>
+        <div id="input-container">
+            <input type="text" id="task-flow" placeholder="Enter task flow e.g. 1,2,3,4,5,6" class="agent-input" />
+            <div id="agents-container">
+                <!-- Dynamically created agent inputs will be here -->
+                
+            </div>
         </div>
-        <button onclick="startConversation()">Send</button>
+    
+
+
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
