@@ -103,7 +103,7 @@ header h1 {
 .chat-window {
     border: 1px solid #ccc;
     height: 500px;
-    max-height: fit-content;
+    max-height: 90%;
     width: 94%;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -238,6 +238,8 @@ header h1 {
     grid-gap: 20px;
     padding: 0 5%;
     margin-right: 20px;
+    max-height: fit-content;
+    overflow-y: scroll;
 }
 
 .box {
